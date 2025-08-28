@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.fs.stockmanagementapp.ui.login.LoginFragment"
+        android:label="Log in"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.fs.stockmanagementapp.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_supplierListFragment"
+            app:destination="@id/supplierListFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_transactionHistoryFragment"
+            app:destination="@id/transactionHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.fs.stockmanagementapp.ui.product.ProductListFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_productListFragment_to_addEditProductFragment"
+            app:destination="@id/addEditProductFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditProductFragment"
+        android:name="com.fs.stockmanagementapp.ui.product.AddEditProductFragment"
+        android:label="Add/Edit Products"
+        tools:layout="@layout/fragment_add_edit_product" >
+        <argument
+            android:name="productId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_addEditProductFragment_to_barcodeScannerFragment"
+            app:destination="@id/barcodeScannerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.fs.stockmanagementapp.ui.product.ProductDetailFragment"
+        android:label="Details of Products"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="productId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_addEditProductFragment"
+            app:destination="@id/addEditProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/supplierListFragment"
+        android:name="com.fs.stockmanagementapp.ui.suppliers.SupplierListFragment"
+        android:label="Suppliers"
+        tools:layout="@layout/fragment_supplier_list">
+        <action
+            android:id="@+id/action_supplierListFragment_to_addEditSupplierFragment"
+            app:destination="@id/addEditSupplierFragment" />
+        <action
+            android:id="@+id/action_supplierListFragment_to_supplierDetailFragment"
+            app:destination="@id/supplierDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/supplierDetailFragment"
+        android:name="com.fs.stockmanagementapp.ui.suppliers.SupplierDetailFragment"
+        android:label="Details of Suppliers"
+        tools:layout="@layout/fragment_supplier_detail">
+        <argument
+            android:name="supplierId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_supplierDetailFragment_to_addEditSupplierFragment"
+            app:destination="@id/addEditSupplierFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditSupplierFragment"
+        android:name="com.fs.stockmanagementapp.ui.suppliers.AddEditSupplierFragment"
+        android:label="Add/Edit Supplier"
+        tools:layout="@layout/fragment_add_edit_supplier" >
+        <argument
+            android:name="supplierId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.fs.stockmanagementapp.ui.transactions.TransactionHistoryFragment"
+        android:label="Transaction History"
+        tools:layout="@layout/fragment_transaction_history" />
+    <fragment
+        android:id="@+id/barcodeScannerFragment"
+        android:name="com.fs.stockmanagementapp.ui.barcode.BarcodeScannerFragment"
+        android:label="Barcode Scanner"
+        tools:layout="@layout/fragment_barcode_scanner" />
+</navigation>
