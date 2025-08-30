@@ -50,7 +50,7 @@ This project is built upon modern Android application development principles and
 
 1.  Clone this GitHub repository:
     ```bash
-    git clone <repository-url>
+    git clone <https://github.com/ffurkanselcuk/StockManagementApp.git>
     ```
 2.  Open the project in the latest stable version of Android Studio.
 3.  Wait for Gradle to sync all the required dependencies.
