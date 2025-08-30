@@ -1,7 +1,5 @@
 # Stock Management App
 
-A modern inventory and stock management application for Android, designed for small to medium-sized businesses. This app allows for easy tracking of products, suppliers, and stock transactions.
-
 ---
 
 ## Features
